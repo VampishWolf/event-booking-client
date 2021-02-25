@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import configData from '../../config.json'
 import axios from 'axios'
 import './EventSection.scss'
@@ -34,11 +35,14 @@ export class EventSection extends Component {
           });
       }
       
-      render() {
-        
-
+    seatSelectionRoute = (val) => {
+        window.location = window.location + 'events/' + val._id
+        // <Link to={`${match.url}/events/${val._id}`}
+    }  
+    
+    render() {
         return (
-            <div className="eventsection">
+            <div className="event__section">
                 <div className="side__nav">
                     <ul className="side__option">
                     {this.state.genres.map((genre, index) => {
@@ -51,7 +55,7 @@ export class EventSection extends Component {
                 <div className="event__cards">
                     {this.state.events ? this.state.events.map((event, index) => {
                         return(
-                        <div className="event__card" key={event._id}>
+                        <div className="event__card" key={event._id} onClick={(e) => this.seatSelectionRoute(event)}>
                             <img src="#" alt="Events"/>
                             <h6>{event.title}</h6>
                             <p>{event.description}</p>
