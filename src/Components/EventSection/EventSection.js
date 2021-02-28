@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link, Redirect, NavLink } from 'react-router-dom'
 import configData from '../../config.json'
 import axios from 'axios'
 import './EventSection.scss'
@@ -28,7 +28,7 @@ export class EventSection extends Component {
             
       }
 
-    fetchEvents = (val) => {
+    fetchEventsByGenre = (val) => {
         axios.get(configData.SERVER_URL + '/events/' + val)
         .then((res) => {
             this.setState({events: res.data});
@@ -36,8 +36,7 @@ export class EventSection extends Component {
       }
       
     seatSelectionRoute = (val) => {
-        window.location = window.location + 'events/' + val._id
-        // <Link to={`${match.url}/events/${val._id}`}
+        window.location = window.location + 'events/' + val._id;
     }  
     
     render() {
@@ -47,16 +46,19 @@ export class EventSection extends Component {
                     <ul className="side__option">
                     {this.state.genres.map((genre, index) => {
                         return(
-                            <li key={genre._id} onClick={(e) => this.fetchEvents(genre.value)} value={genre.value}>{genre.value}</li>
+                            <li key={genre._id} onClick={(e) => this.fetchEventsByGenre(genre.value)} value={genre.value}>{genre.value}</li>
                         )
                     })}
                     </ul>
                 </div>
                 <div className="event__cards">
                     {this.state.events ? this.state.events.map((event, index) => {
-                        return(
-                        <div className="event__card" key={event._id} onClick={(e) => this.seatSelectionRoute(event)}>
-                            <img src="#" alt="Events"/>
+                        return( 
+                        <div className="event__card" key={event._id} onClick={
+                            (e) => this.seatSelectionRoute(event)
+                            // <Link to={`events/${event._id}`} activeClassName="active" />
+                        }>
+                            <img src={event.eimage} alt="Events" className="event__card__image"/>
                             <h6>{event.title}</h6>
                             <p>{event.description}</p>
                         </div>

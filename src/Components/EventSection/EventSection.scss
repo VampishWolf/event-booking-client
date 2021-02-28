@@ -21,13 +21,18 @@
             padding: 0;
             li {
                 padding: 0 50px;
-                font-size: smaller;
+                font-size: 16px;
                 line-height: 3em;
                 list-style: none;
                 
                 &:hover {
-                    background-color: rgba(8, 7, 105, 0.329);
+                    border-radius: 5px;
+                    background-color: rgba(22, 21, 39, 0.729);
                     cursor: pointer;
+                }
+                &:active {
+                    box-shadow: 0px 0px 10px slategrey;
+
                 }
             }
         }
@@ -46,11 +51,16 @@
             margin: 10px;
             transition: transform .2s;
             width: 40%;
+            .event__card__image {
+                // height: 100%;
+                width: 100%;
+            }
             h6 {
                 margin: 50px 0 0 0;
             }
             p {
                 margin: 15px 0;
+                font-size: 12px;
             }
             &:hover{
                 transform: scale(1.05);

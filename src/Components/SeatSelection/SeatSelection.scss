@@ -4,10 +4,15 @@
 
 .event__image {
     display: flex;
+    // flex: 1 0 2%;
     float: right;
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), transparent);
     margin-top: 20px;
     z-index: 5;
+    .event__image__size {
+        // padding: 50px;
+        width: 40em;
+    }
 }
 .event__details {
     background-color: transparent;
@@ -46,13 +51,18 @@
         flex-wrap: wrap;
         justify-content: center;
         .seats {
-            background-color: #1E2021;
+            background-color: #1f2122;
             border-radius: 5px;
             flex: 2 0 4%;
             cursor: pointer;
             margin: 3%;
-            // padding: 1%;
+            // padding: ;
             text-align: center;
+            font-size: 16px;
+            
+            &:hover {
+                background-color: rgba(15, 15, 15, 0.9);
+            }
         }
     }
 }
@@ -91,7 +101,7 @@
         border-radius: 7px;
         cursor: pointer;
         float: right;
-        padding: 10px;
+        // padding: 10px;
         height: 40px;
         width: 150px;
         font-size: 16px;
@@ -99,7 +109,7 @@
         margin-right: 20px;
         
         &:hover {
-            background-color: rgba(15, 15, 15, 0.9);;
+            background-color: rgba(15, 15, 15, 0.9);
         }
     }
 }
