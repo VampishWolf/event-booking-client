@@ -37,7 +37,7 @@ export class SeatSelection extends Component {
       }
 
       componentDidMount() {
-            var socket = socketClient(configData.SERVER_URL);
+            // var socket = socketClient(configData.SERVER_URL);
 
             // const { pathParam } = this.props.match.params.eventId;
             const { match: { params } } = this.props;
