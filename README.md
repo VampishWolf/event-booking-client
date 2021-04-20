@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# An Amazon prime design clone for private reservations
+
+If you want to see the project, you can visit - https://blue-mountains.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
